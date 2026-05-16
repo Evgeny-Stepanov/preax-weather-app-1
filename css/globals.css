@@ -1,0 +1,37 @@
+.body {
+  min-height: 100vh;
+  padding-block: 32px;
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-text-main);
+  background: center / cover no-repeat url("/public/main-bg.jpg") fixed;
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  background: rgba(112, 112, 112, 0.1);
+  border-radius: var(--border-radius);
+  backdrop-filter: blur(50px);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.h2 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.33;
+}

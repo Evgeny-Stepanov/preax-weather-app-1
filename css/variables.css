@@ -1,0 +1,10 @@
+:root {
+  --color-white: #f5f4f4;
+  --color-black: #202020;
+
+  --color-text-main: var(--color-white);
+
+  --border-radius: 8px;
+
+  --transition-duration: 0.3s;
+}
