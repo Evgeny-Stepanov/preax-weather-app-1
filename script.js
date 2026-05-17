@@ -1,22 +1,17 @@
-const searchInputElement = document.querySelector(".search__input");
-const searchInputClearButtonElement = document.querySelector(".search__clear");
+const searchFormElement = document.querySelector(".header__search form");
 
-const searchInputHandleChange = () => {
-  searchInputElement.addEventListener("change", (event) => {
-    searchInputValueToConsole(event);
+const searchFormHandleSubmit = () => {
+  searchFormElement.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const inputValue = event.currentTarget.elements.search.value.trim();
+
+    searchInputValueToConsole(inputValue);
   });
 };
 
-const searchInputValueToConsole = (event) => {
-  const value = event.target.value;
+const searchInputValueToConsole = (value) => {
   console.log(value);
 };
 
-const clearSearchInput = () => {
-  searchInputClearButtonElement.addEventListener("click", () => {
-    searchInputElement.value = "";
-  });
-};
-
-searchInputHandleChange();
-clearSearchInput();
+searchFormHandleSubmit();

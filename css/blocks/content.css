@@ -7,6 +7,7 @@
 .weather__details {
   flex-basis: calc((534px / 1056px) * 100%);
   height: 408px;
+  padding: 8px;
 }
 
 .details {
@@ -26,25 +27,36 @@
 }
 
 .details__temperature {
-  margin-top: 64px;
+  /* For pixel perfect */
+  padding-left: 2px;
+
+  margin-top: 65px;
   font-size: 112px;
   font-weight: 700;
   line-height: 1;
 }
 
 .details__conditions {
-  margin-top: 64px;
+  margin-top: 63px;
+}
 
-  span {
-    display: inline-block;
+.details__conditions-text {
+  position: relative;
+  padding-left: 32px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
     width: 24px;
     height: 24px;
-    margin-right: 8px;
-    vertical-align: text-bottom;
+    translate: 0 -50%;
+    background: center / contain no-repeat url("/public/icons/cloudy.svg");
   }
 }
 
-.details__sensations {
+.details__feeling {
   margin-top: 8px;
 }
 
