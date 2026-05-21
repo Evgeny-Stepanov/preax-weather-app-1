@@ -22,20 +22,26 @@
     />
     <link
       rel="stylesheet"
-      href="/style.css"
+      href="normalize.css"
+    />
+    <link
+      rel="stylesheet"
+      href="style.css"
     />
     <script
-      src="/script.js"
-      defer
+      src="script.js"
+      type="module"
     ></script>
   </head>
   <body class="body">
     <div class="container">
+      <!-- ==================== HEADER ==================== -->
       <header class="header">
         <a
           href="/"
           class="logo"
-          title="Перейти на главную страницу приложения прогноза погоды"
+          title="Перейти на главную страницу"
+          aria-label="Перейти на главную страницу приложения прогноза погоды"
         >
           <svg
             viewBox="0 0 192 48"
@@ -93,11 +99,13 @@
               class="visually-hidden"
               >Введите название города</label
             >
+            <!--  Disabled autocomplete: Chrome's :-webkit-autofill doesn't support semi-transparent background colors on hover -->
             <input
               type="search"
               id="search"
               class="search__input"
               placeholder="Поиск по городу"
+              autocomplete="off"
             />
             <div class="search__magnifier-icon">
               <svg
@@ -120,13 +128,39 @@
                 />
               </svg>
             </div>
+            <button
+              type="button"
+              class="search__clear-button"
+              aria-label="Очистить поле ввода"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                stroke="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.65041 5.95141C4.2912 5.59221 4.29119 5.00983 4.65039 4.65062C5.00958 4.29141 5.59197 4.2914 5.95118 4.65059L19.3496 18.0485C19.7088 18.4077 19.7088 18.9901 19.3496 19.3493C18.9904 19.7085 18.408 19.7086 18.0488 19.3494L4.65041 5.95141Z"
+                  stroke-width="0.5"
+                />
+                <path
+                  d="M4.65084 19.3496C4.29163 18.9904 4.29161 18.408 4.65081 18.0488L18.0488 4.6504C18.408 4.29119 18.9903 4.29118 19.3496 4.65038C19.7088 5.00957 19.7088 5.59196 19.3496 5.95117L5.95163 19.3496C5.59243 19.7088 5.01005 19.7088 4.65084 19.3496Z"
+                  stroke-width="0.5"
+                />
+              </svg>
+            </button>
           </form>
         </search>
       </header>
 
+      <!-- ==================== MAIN ==================== -->
       <main>
+        <h1 class="visually-hidden">Прогноз погоды</h1>
+
+        <!-- ==================== WEATHER ==================== -->
         <section class="weather">
-          <h1 class="visually-hidden">Прогноз погоды</h1>
           <div class="weather__details details">
             <h2 class="h2">Москва</h2>
             <time datetime="2026-01-06T11:29">
@@ -150,8 +184,11 @@
           </ul>
         </section>
 
+        <!-- ==================== SLIDER ==================== -->
         <div class="slider"></div>
       </main>
+
+      <!-- ==================== FOOTER ==================== -->
       <footer class="footer"></footer>
     </div>
   </body>
