@@ -1,0 +1,50 @@
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.details__title {
+  font-size: var(--size-3xl);
+  line-height: 1.33333;
+  font-weight: 700;
+}
+
+.details__now,
+.details__time,
+.details__feeling {
+  margin-top: var(--size-lg);
+}
+
+.details__date,
+.details__time {
+  display: block;
+}
+
+.details__temperature,
+.details__condition {
+  margin-top: 64px;
+}
+
+.details__temperature {
+  font-size: 112px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.details__condition {
+  position: relative;
+  padding-left: var(--size-4xl);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 50% auto auto 0;
+    width: var(--size-3xl);
+    height: var(--size-3xl);
+    translate: 0 -50%;
+    background: center / contain no-repeat
+      url("../../public/icons/weather/day/broken-clouds.png");
+  }
+}

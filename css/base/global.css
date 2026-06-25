@@ -1,0 +1,14 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  min-width: 1280px;
+  min-height: 100vh;
+  padding-block: var(--size-4xl);
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 400;
+  font-variant-numeric: lining-nums tabular-nums;
+  color: var(--color-neutral-100);
+  background: center / cover no-repeat url("../../public/main-bg.jpg") fixed;
+}

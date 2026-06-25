@@ -1,0 +1,13 @@
+@import "../components/logo.css";
+@import "../components/search.css";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+  padding-block: var(--size-4xl);
+}
+
+.header__search {
+  flex-basis: calc((506 / 1056) * 100%);
+}

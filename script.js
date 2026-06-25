@@ -1,3 +1,3 @@
-import { initSearch } from "./js/init-search.js";
+import { searchHandlers } from "./js/components/search.js";
 
-initSearch();
+searchHandlers();
