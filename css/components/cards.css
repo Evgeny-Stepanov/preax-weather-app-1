@@ -5,7 +5,101 @@
 }
 
 .card {
-  height: 196px;
-  background-color: var(--bg-color-neutral-100);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 196px;
+  padding: var(--size-2xl);
+  color: var(--color-neutral-filled-900);
+  background-color: var(--color-neutral-tone-100);
   border-radius: var(--size-lg);
+}
+
+.card__title {
+  font-size: var(--size-2xl);
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.card__icon,
+.card__value,
+.card__range-wrapper,
+.card__text {
+  margin-top: var(--size-2xl);
+}
+
+.card__icon {
+  width: var(--size-4xl);
+  height: var(--size-4xl);
+}
+
+.card__value {
+  font-size: var(--size-4xl);
+  line-height: 1;
+}
+
+.card__range-wrapper svg,
+.card__range--dark {
+  position: absolute;
+  inset: 0 auto auto 0;
+}
+
+.card__range-wrapper ~ .card__text,
+.card__range ~ .card__text {
+  margin-top: var(--size-lg);
+}
+
+.card__range-wrapper {
+  position: relative;
+  width: 128px;
+  height: 8px;
+}
+
+.card__range {
+  margin: var(--size-2xl) 0 0 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: var(--size-lg);
+  background: var(--color-neutral-tone-200);
+  border-radius: var(--size-lg);
+  outline: none;
+  overflow: hidden;
+
+  &::-webkit-slider-thumb {
+    box-sizing: content-box;
+    -webkit-appearance: none;
+    appearance: none;
+    width: var(--size-lg);
+    height: var(--size-lg);
+    background: var(--color-neutral-filled-100);
+    border-radius: 50%;
+    /* I can't make the frame transparent to the card background. If I apply the card background color, the frame blends in with the slider. So I chose the gray color by eye. */
+    border: var(--size-xs) solid #b3b3b3;
+  }
+
+  &::-moz-range-thumb {
+    width: var(--size-lg);
+    height: var(--size-lg);
+    background: var(--color-neutral-filled-100);
+    border-radius: 50%;
+    border: var(--size-xs) solid #b3b3b3;
+  }
+}
+
+.card__range--dark {
+  margin: 0;
+}
+
+.card__text {
+  font-size: var(--size-xl);
+  line-height: 1.33333;
+  color: var(--color-neutral-filled-800);
+}
+
+.card__text--long {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }

@@ -9,6 +9,6 @@
   line-height: 1.2;
   font-weight: 400;
   font-variant-numeric: lining-nums tabular-nums;
-  color: var(--color-neutral-100);
+  color: var(--color-neutral-filled-100);
   background: center / cover no-repeat url("../../public/main-bg.jpg") fixed;
 }
