@@ -37,7 +37,6 @@
           <svg
             width="192"
             height="31"
-            role="img"
             aria-label="Логотип Weather App"
           >
             <use href="public/sprite.svg#logo"></use>
@@ -90,25 +89,63 @@
       <main>
         <h1 class="visually-hidden">Приложение погоды Weather App</h1>
 
-        <section class="weather">
-          <div class="weather__details details">
-            <h2 class="details__title">Москва</h2>
-            <p class="details__now">
+        <div class="flex-row">
+          <section class="overview">
+            <h2 class="visually-hidden">Общая информация</h2>
+            <h3 class="overview__location"></h3>
+            <p class="overview__now">
               <time datetime="2026-01-06T11:29">
-                <span class="details__date">Суббота, 06 января</span>
-                <span class="details__time">11:29</span>
+                <span class="overview__date"></span>
+                <span class="overview__time"></span>
               </time>
             </p>
-            <p class="details__temperature">-7&deg;</p>
-            <p class="details__condition">Облачно</p>
-            <p class="details__feeling">Ощущается как -11&deg;</p>
-          </div>
-        </section>
+            <p class="overview__temperature"></p>
+            <p class="overview__condition"></p>
+            <p class="overview__feeling"></p>
+          </section>
+
+          <section class="details">
+            <h2 class="visually-hidden">Подробная информация о погоде</h2>
+            <ul class="details__cards"></ul>
+          </section>
+        </div>
 
         <section class="slider"></section>
       </main>
 
       <footer class="footer"></footer>
     </div>
+
+    <template id="card-template">
+      <li class="details__card card">
+        <h3 class="card__title"></h3>
+        <div class="card__icon">
+          <img
+            alt=""
+            width="32"
+            height="32"
+          />
+        </div>
+        <p class="card__metric">
+          <span class="card__value"></span>
+          <span aria-hidden="true"></span>
+          <span class="visually-hidden"></span>
+          <time></time>
+        </p>
+        <div class="card__range">
+          <svg
+            width="126"
+            height="8"
+          >
+            <use href="public/sprite.svg#pressure-progress-bar"></use>
+          </svg>
+          <span class="card__range-circle"></span>
+        </div>
+        <p class="card__text">
+          <span class="card__word card__word--left"></span>
+          <span class="card__word card__word--right"></span>
+        </p>
+      </li>
+    </template>
   </body>
 </html>

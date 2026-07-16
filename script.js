@@ -1,5 +1,7 @@
-import { searchHandlers } from "./js/components/search.js";
-import { cardsComponent } from "./js/components/cards.js";
+import { search } from "./js/components/search.js";
+import { overview } from "./js/sections/overview.js";
+import { details } from "./js/sections/details.js";
 
-searchHandlers();
-cardsComponent();
+search();
+overview();
+details();

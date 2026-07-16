@@ -1,0 +1,87 @@
+.details__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--size-2xl);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 196px;
+  padding: var(--size-2xl);
+  color: var(--color-neutral-filled-900);
+  background-color: var(--color-neutral-tone-100);
+  border-radius: var(--size-lg);
+}
+
+.card__title {
+  font-size: var(--size-2xl);
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.card__icon,
+.card__metric,
+.card__range,
+.card__text {
+  margin-top: var(--size-2xl);
+}
+
+.card__icon {
+  width: var(--size-4xl);
+  height: var(--size-4xl);
+
+  img {
+    rotate: calc(var(--rotate) * 1deg);
+  }
+}
+
+.card__metric {
+  font-size: var(--size-4xl);
+  line-height: 1;
+}
+
+.card__range ~ .card__text {
+  margin-top: var(--size-lg);
+}
+
+.card__range {
+  position: relative;
+  width: 126px;
+  height: var(--size-lg);
+  background-color: var(--color-neutral-tone-200);
+  border-radius: var(--size-lg);
+  overflow: hidden;
+}
+
+/* I can't replicate the circle outline from the layout. It doesn't become transparent to the card background. */
+.card__range-circle {
+  position: absolute;
+  top: 50%;
+  left: calc(var(--progress, 0) * (100% - 12px) / 100);
+  width: var(--size-xl);
+  height: var(--size-xl);
+  background: var(--color-neutral-filled-100);
+  border-radius: 50%;
+  transform: translateY(-50%);
+  mask-image: radial-gradient(
+    circle closest-side at center,
+    black 0%,
+    black calc(100% - 2px),
+    var(--color-neutral-tone-200) calc(100% - 2px),
+    var(--color-neutral-tone-200) 100%
+  );
+}
+
+.card__text {
+  font-size: var(--size-xl);
+  line-height: 1.33333;
+  color: var(--color-neutral-filled-800);
+}
+
+.card__text--long {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}

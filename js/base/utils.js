@@ -1,3 +1,5 @@
+import { ruPlural } from "./constants.js";
+
 export const debounce = (func, delay) => {
   let timeoutId;
 
@@ -9,6 +11,9 @@ export const debounce = (func, delay) => {
   };
 };
 
-export const toConsole = (value) => {
-  console.log(value);
+export const toConsole = (value) => console.log(value);
+
+export const pluralizeIntl = (number, forms) => {
+  const category = ruPlural.select(number);
+  return forms[category] || forms.many || forms.other || forms.one;
 };

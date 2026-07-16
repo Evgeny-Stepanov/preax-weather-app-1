@@ -15,6 +15,11 @@
     color: var(--color-neutral-filled-600);
   }
 
+  &:hover,
+  &:focus-visible {
+    background-color: var(--color-neutral-filled-200);
+  }
+
   &:focus-visible,
   &:not(:placeholder-shown) {
     ~ .search__loupe {
@@ -26,31 +31,13 @@
       opacity: 1;
     }
   }
-
-  &:focus-visible,
-  &:placeholder-shown:hover {
-    background-color: var(--color-neutral-filled-200);
-  }
-
-  &:focus-visible {
-    ~ .search__button {
-      color: var(--color-neutral-700);
-    }
-  }
-
-  &:not(:placeholder-shown) {
-    &:hover {
-      ~ .search__button {
-        color: var(--color-neutral-700);
-      }
-    }
-  }
 }
 
 .search__loupe,
 .search__button {
   position: absolute;
   inset: var(--size-xl) var(--size-2xl) auto auto;
+  color: var(--color-neutral-filled-700);
   transition-property: visibility, opacity, color;
   transition-duration: var(--transition-duration);
 }
@@ -58,17 +45,15 @@
 .search__loupe {
   display: inline-block;
   padding: var(--size-xs);
-  color: var(--color-neutral-700);
   fill: transparent;
 }
 
 .search__button {
   padding: var(--size-sm);
-  color: var(--color-neutral-filled-900);
   visibility: hidden;
   opacity: 0;
 
   &:hover {
-    color: var(--color-neutral-700);
+    color: var(--color-neutral-filled-900);
   }
 }

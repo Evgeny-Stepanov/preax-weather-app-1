@@ -4,6 +4,7 @@
 @import "css/base/utils.css";
 
 @import "css/sections/header.css";
-@import "css/sections/weather.css";
+@import "css/sections/overview.css";
+@import "css/sections/details.css";
 @import "css/sections/slider.css";
 @import "css/sections/footer.css";
