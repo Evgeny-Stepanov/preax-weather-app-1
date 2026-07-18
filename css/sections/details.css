@@ -1,3 +1,7 @@
+.details {
+  flex-basis: calc((506 / 1056) * 100%);
+}
+
 .details__cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -50,28 +54,47 @@
   position: relative;
   width: 126px;
   height: var(--size-lg);
-  background-color: var(--color-neutral-tone-200);
   border-radius: var(--size-lg);
-  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-color: var(--color-neutral-tone-200);
+    mask-image: radial-gradient(
+      circle at calc(var(--progress, 0) * (100% - 8px) / 100 + 4px) center,
+      transparent 6px,
+      black 6px
+    );
+    -webkit-mask-image: radial-gradient(
+      circle at calc(var(--progress, 0) * (100% - 8px) / 100 + 4px) center,
+      transparent 6px,
+      black 6px
+    );
+  }
 }
 
-/* I can't replicate the circle outline from the layout. It doesn't become transparent to the card background. */
+.card__range--dark {
+  &::before {
+    background: radial-gradient(
+      50% 9453.13% at 50% 50%,
+      rgba(84, 84, 84, 0.4) 0%,
+      rgba(138, 138, 138, 0.4) 45%,
+      #dadada 100%,
+      rgba(218, 218, 218, 0.4) 100%
+    );
+  }
+}
 .card__range-circle {
   position: absolute;
   top: 50%;
-  left: calc(var(--progress, 0) * (100% - 12px) / 100);
-  width: var(--size-xl);
-  height: var(--size-xl);
+  left: calc(var(--progress, 0) * (100% - 8px) / 100);
+  width: var(--size-lg);
+  height: var(--size-lg);
   background: var(--color-neutral-filled-100);
   border-radius: 50%;
   transform: translateY(-50%);
-  mask-image: radial-gradient(
-    circle closest-side at center,
-    black 0%,
-    black calc(100% - 2px),
-    var(--color-neutral-tone-200) calc(100% - 2px),
-    var(--color-neutral-tone-200) 100%
-  );
 }
 
 .card__text {

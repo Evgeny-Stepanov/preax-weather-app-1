@@ -25,12 +25,4 @@
   display: flex;
   gap: var(--size-2xl);
   padding-block: var(--size-4xl);
-
-  section:first-child {
-    flex-basis: calc((534 / 1056) * 100%);
-  }
-
-  section:last-child {
-    flex-basis: calc((506 / 1056) * 100%);
-  }
 }

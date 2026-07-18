@@ -32,17 +32,13 @@ export const card = (data) => {
   metric(cardMetricElement, title, value, unit);
 
   const cardRangeElement = cardElement.querySelector(".card__range");
-  if (title === "Влажность" || title === "Видимость") {
-    cardRangeElement.querySelector("svg").remove();
-    cardRangeElement
-      .querySelector(".card__range-circle")
-      .style.setProperty("--progress", limitedRangeValue);
-  } else if (title === "Давление") {
-    cardRangeElement
-      .querySelector(".card__range-circle")
-      .style.setProperty("--progress", limitedRangeValue);
+  if (title === "Влажность" || title === "Видимость" || title === "Давление") {
+    cardRangeElement.style.setProperty("--progress", limitedRangeValue);
   } else {
     cardRangeElement.remove();
+  }
+  if (title === "Давление") {
+    cardRangeElement.classList.add("card__range--dark");
   }
 
   const cardTextElement = cardElement.querySelector(".card__text");
